@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spells</title>
+        <link rel="stylesheet" href="styles.css">
+        <!--SCRIPT FOR INCLUDING HEADER AND FOOTER-->
+        <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("data-include");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("data-include");
+                  includeHTML();
+                  document.getElementById("spells").classList.remove('active');
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+        
+        </script>
+    </head>
+
+    <body>
+        <!--HEADER-->
+        <div data-include="views/header.html"></div>
+        <div class = "page">
+          <div class = "page-content">
+              <div id = "inputBox">
+                <h2>Find a spell</h2>
+                <hr>
+                <form>
+                  <input id = "userSpell" type = "text" onkeyup = "mfunc('userSpell', 'spellSuggestions', 'spells')"></input><br/>
+                  <input id = "castSpell" type = "submit" value = "Cast Spell"></ipnut>
+                </form>
+                <div id = "spellSuggestions">
+                </div>
+                <hr class = "border">
+                <h2>Find a Character</h2>
+                <hr>
+                <form>
+                  <input id = "userInput" type = "text" onkeyup = "mfunc('userInput', 'characterSuggestions', 'characters')"></input><br/>
+                  <input id = "findCharacter" type = "submit" value = "Find Character"></ipnut>
+                  <div id = "characterSuggestions">
+                  </div>
+                </form>
+              </div>
+              <div id = "resultsBox">
+                <h2 id = "resultsHeader" >See Results Here</h2>
+                <hr>
+              </div>
+          </div>
+        </div>
+      </div>
+        
+        
+        <!--FOOTER-->
+        <div data-include="views/footer.html"></div>
+        <script>
+          includeHTML();
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+        <script text="type/javascript" src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,147 @@
+/*NAVBAR AND HEADER*/
+.title-bar{
+    text-align: center;
+    margin-bottom:0px;
+    font-family: serif;
+    font-size: 55px;
+    color: #bfa036;
+    background-color: maroon;
+    
+}
+
+
+.bg-container{
+    /*background-color: #312509;*/
+}
+
+.navbar{
+    background-color:#262626;
+}
+.nav-item{
+    width: 100px;
+}
+
+.bg-nav {
+
+    
+}
+
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    float: left !important;
+    padding-left:5px;
+    /*border-left:1px solid #d9d9d9;*/
+   
+}
+.nav-link{
+    color: #bfa036 !important;
+    width: 100px;
+    text-align:center;
+}
+
+.navlink, .active{
+    background-color:#2f7296;
+    opacity:.8;
+    width:100px;
+    border-radius:10%;
+    
+}
+
+/*END OF NAVBAR AND HEADER*/
+
+/*FOOTER*/
+footer {
+  background-color: maroon;
+  position: relative;
+  right: 0;
+  bottom:0;
+  left: 0;
+  height: 70px;
+  min-height: 60px;
+  width:100%;
+  padding:15px;
+  align-self:flex-end;
+  text-align: center;
+  clear:both;
+}
+
+#ghub-link{
+    color: #6e5a18;
+    
+}
+#social-info{
+    float:right;
+    width:50%;
+    text-align:center;
+    padding:5px;
+}
+
+#author-info{
+    float:left;
+    width:50%;
+    text-align:center;
+    padding:5px;
+}
+/*END OF FOOTER*/
+
+/*GENERAL*/
+.page{
+    background-color: #003300;
+    padding:30px;
+}
+
+.page-content{
+    background-color: grey;
+    display:flex;
+    flex-wrap:wrap;
+    min-height: 300px;
+    width:100%;
+    justify-content:space-around;
+    padding: 30px;
+    border-radius: 20px 20px 20px 20px;
+    /*flex-direction:column;*/
+    
+}
+
+/*SPELLS AND CHARACTERS PAGE*/
+.border{
+    border: solid 3px maroon;
+}
+#resultsHeader{
+    display:flex;
+    align-self:center;
+}
+hr{
+    display:block;
+}
+#inputBox{
+    max-width: 50%;
+}
+#resultsBox{
+    display:flex;
+    flex-direction: column;
+    min-height: 50%;
+    overflow: auto;
+    background-color: #babab8;
+    border-radius: 10px;
+    min-width:50%;
+    /*align-self: right*/
+    
+}
+
+#suggestions{
+    min-height: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    min-width:20%;
+    max-width: inherit;
+    align-self: right;
+}
